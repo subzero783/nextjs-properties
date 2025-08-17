@@ -1,6 +1,6 @@
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import InfoBoxes from "@/components/InfoBoxes";
+import HomeProperties from "@/components/HomeProperties";
 
 export const metadata = {
   title: "Home Page",
@@ -11,6 +11,7 @@ const HomePage = () => {
     <>
       <Hero />
       <InfoBoxes />
+      <HomeProperties />
     </>
   );
 };

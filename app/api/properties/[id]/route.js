@@ -22,22 +22,22 @@ export const GET = async (request, { params }) => {
 };
 
 // PUT /api/properties/:id
-// export const PUT = async (request, { params }) => {
-//   try {
-//     await connectDB();
+export const PUT = async (request, { params }) => {
+  try {
+    await connectDB();
 
-//     const sessionUser = await getSessionUser();
+    const sessionUser = await getSessionUser();
 
-//     if (!sessionUser || !sessionUser.userId) {
-//       return new Response("User ID is required", { status: 401 });
-//     }
+    if (!sessionUser || !sessionUser.userId) {
+      return new Response("User ID is required", { status: 401 });
+    }
 
-//     const { id } = params;
-//     const { userId } = sessionUser;
+    const { id } = params;
+    const { userId } = sessionUser;
 
-//     const formData = await request.formData();
+    const formData = await request.formData();
 
-//     // Access all values from amenities
-//     const amenities = formData.getAll("amenities");
-//   } catch (error) {}
-// };
+    // Access all values from amenities
+    const amenities = formData.getAll("amenities");
+  } catch (error) {}
+};

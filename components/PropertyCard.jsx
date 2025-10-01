@@ -14,10 +14,13 @@ const PropertyCard = ({ property }) => {
     }
   };
 
+  const imageSrc = property.images[0].includes("cloudinary") ? property.images[0] : `/images/properties/${property.images[0]}`;
+
   return (
     <div className="rounded-xl shadow-md relative">
       <Image
-        src={`/images/properties/${property.images[0]}`}
+        // src={`/images/properties/${property.images[0]}`}
+        src={imageSrc}
         alt=""
         height={0}
         width={0}

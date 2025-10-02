@@ -12,7 +12,7 @@ const response = await client.responses.create({
 console.log(response.output_text);
 
 const TestOpenai = () => {
-  <div>Test OpenAI</div>;
+  return <div>{response.output_text}</div>;
 };
 
 export default TestOpenai;

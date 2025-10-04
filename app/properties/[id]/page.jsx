@@ -47,7 +47,7 @@ const PropertyPage = () => {
         <>
           <PropertyHeaderImage image={property.images[0]} />
           {/* Start: Go Back to Properties */}
-          <section>
+          <section className="back-to-properties-section">
             <div className="container m-auto py-6 px-6">
               <Link
                 href="/properties/"

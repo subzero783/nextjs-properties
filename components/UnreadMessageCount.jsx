@@ -9,9 +9,8 @@ const UnreadMessageCount = ({ session }) => {
     if (!session) return;
 
     const fetchUnreadMessages = async () => {
+      const res = await fetch("/api/messages/unread-count");
       try {
-        const res = await fetch("/api/messages/unread-count");
-
         if (res.status === 200) {
           const data = await res.json();
           setUnreadCount(data);

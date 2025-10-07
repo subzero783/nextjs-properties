@@ -15,7 +15,6 @@ const Properties = () => {
     const fetchProperties = async () => {
       try {
         const res = await fetch(`/api/properties?page=${page}&pageSize=${pageSize}`);
-
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }

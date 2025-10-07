@@ -22,9 +22,8 @@ const ProfilePage = () => {
         return;
       }
 
+      const res = await fetch(`/api/properties/user/${userId}`);
       try {
-        const res = await fetch(`/api/properties/user/${userId}`);
-
         if (res.status === 200) {
           const data = await res.json();
           setProperties(data);
@@ -46,9 +45,8 @@ const ProfilePage = () => {
 
     if (!confirmed) return;
 
+    const res = await fetch(`/api/properties/${propertyId}`, { method: "DELETE" });
     try {
-      const res = await fetch(`/api/properties/${propertyId}`, { method: "DELETE" });
-
       if (res.status === 200) {
         // Remove the property from state
         const updatedProperties = properties.filter((property) => property._id !== propertyId);

@@ -43,7 +43,6 @@ const PropertyEditForm = () => {
     const fetchPropertyData = async () => {
       try {
         const propertyData = await fetchProperty(id);
-
         // Check rates for null, if so then make empty string
         if (propertyData && propertyData.rates) {
           const defaultRates = { ...propertyData.rates };

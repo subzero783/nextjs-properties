@@ -10,8 +10,8 @@ const SavedPropertiesPage = () => {
 
   useEffect(() => {
     const fetchSavedProperties = async () => {
-      const res = await fetch("/api/bookmarks");
       try {
+        const res = await fetch("/api/bookmarks");
         if (res.status === 200) {
           const data = await res.json();
           setProperties(data);

@@ -22,6 +22,10 @@ async function fetchProperties({ showFeatured = false } = {}) {
       }
     );
 
+    console.log("fetch properties URL in requests:");
+    console.log(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties${showFeatured ? "/featured" : ""}`);
+
+    console.log("Response log:");
     console.log(res);
 
     if (!res.ok) {

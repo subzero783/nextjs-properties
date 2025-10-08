@@ -2,13 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/models/*": ["models/*"],
-      "@/utils/*": ["utils/*"],
-      "@/context/*": ["context/*"],
-      "@/config/*": ["config/*"],
-      "@/assets/images/*": ["assets/images/*"],
-      "@/assets/styles/*": ["assets/styles/*"]
+      "@/components/*": ["./components/*"],
+      "@/models/*": ["./models/*"],
+      "@/utils/*": ["./utils/*"],
+      "@/context/*": ["./context/*"],
+      "@/config/*": ["./config/*"],
+      "@/assets/images/*": ["./assets/images/*"],
+      "@/assets/styles/*": ["./assets/styles/*"]
     }
   }
 }

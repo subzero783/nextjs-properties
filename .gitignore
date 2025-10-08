@@ -44,3 +44,6 @@ next-env.d.ts
 *.jpg
 *.png
 *.svg
+!/assets/images/*.png
+!/assets/images/*.jpg
+!/assets/images/*.svg

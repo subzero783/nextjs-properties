@@ -1,5 +1,3 @@
-const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
-
 // Fetch all properties
 async function fetchProperties({ showFeatured = false } = {}) {
   try {
@@ -8,7 +6,8 @@ async function fetchProperties({ showFeatured = false } = {}) {
       return [];
     }
 
-    const res = await fetch(`${apiDomain}/properties${showFeatured ? "/featured" : ""}`, { cache: "no-store" });
+    // const res = await fetch(`${apiDomain}/properties${showFeatured ? "/featured" : ""}`, { cache: "force-cache" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties${showFeatured ? "/featured" : ""}`, { cache: "force-cache" });
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -21,18 +20,18 @@ async function fetchProperties({ showFeatured = false } = {}) {
   }
 }
 
-// Fetch single property
+// Fetch Single Property
 async function fetchProperty(id) {
   try {
-    // Handle the case where the domain is not available yet
     if (!apiDomain) {
       return null;
     }
 
-    const res = await fetch(`${apiDomain}/properties/${id}`);
+    // const res = await fetch(`${apiDomain}/properties/${id}`, { cache: "force-cache" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties/${id}`, { cache: "force-cache" });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch data");
+      throw new Error("Failed to fetch properties data");
     }
 
     return res.json();

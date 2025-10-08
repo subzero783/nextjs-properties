@@ -10,7 +10,7 @@ async function fetchProperties({ showFeatured = false } = {}) {
     }
 
     // const res = await fetch(`${apiDomain}/properties${showFeatured ? "/featured" : ""}`, { cache: "force-cache" });
-    const res = await fetch(`/api/properties${showFeatured ? "/featured" : ""}`, { cache: "force-cache" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties${showFeatured ? "/featured" : ""}`, { cache: "force-cache" });
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -31,7 +31,7 @@ async function fetchProperty(id) {
     }
 
     // const res = await fetch(`${apiDomain}/properties/${id}`, { cache: "force-cache" });
-    const res = await fetch(`/api/properties/${id}`, { cache: "force-cache" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties/${id}`, { cache: "force-cache" });
 
     if (!res.ok) {
       throw new Error("Failed to fetch properties data");

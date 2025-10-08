@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import Spinner from "@/components/Spinner";
-import Message from "@/components/Message";
+import Spinner from "../components/Spinner";
+import Message from "../components/Message";
 
 const Messages = () => {
   const [messages, setMessages] = useState([]);

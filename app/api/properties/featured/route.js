@@ -1,5 +1,5 @@
-import connectDB from "@/config/database";
-import Property from "@/models/Property";
+import connectDB from "../../../../config/database";
+import Property from "../../../../models/Property";
 
 export const dynamic = "force-dynamic";
 

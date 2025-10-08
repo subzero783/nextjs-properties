@@ -1,4 +1,4 @@
-import { fetchProperties } from "@/utils/requests";
+import { fetchProperties } from "../utils/requests";
 import FeaturedPropertyCard from "./FeaturedPropertyCard";
 
 const FeaturedProperties = async () => {

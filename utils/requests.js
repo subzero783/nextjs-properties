@@ -1,7 +1,5 @@
 const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
 
-export const dynamic = "force-dynamic";
-
 // Fetch all properties
 async function fetchProperties({ showFeatured = false } = {}) {
   try {
@@ -10,6 +8,7 @@ async function fetchProperties({ showFeatured = false } = {}) {
       return [];
     }
 
+    // const res = await fetch(`${apiDomain}/properties${showFeatured ? "/featured" : ""}`, { cache: "force-cache" }, { next: { revalidate: 3600 } });
     const res = await fetch(`${apiDomain}/properties${showFeatured ? "/featured" : ""}`, { cache: "force-cache" }, { next: { revalidate: 3600 } });
 
     if (!res.ok) {

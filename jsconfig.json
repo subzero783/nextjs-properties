@@ -6,7 +6,9 @@
       "@/models/*": ["./models/*"],
       "@/utils/*": ["./utils/*"],
       "@/context/*": ["./context/*"],
-      "@/config/*": ["./config/*"]
+      "@/config/*": ["./config/*"],
+      "@/assets/images/*": ["./assets/images/*"],
+      "@/assets/styles/*": ["./assets/styles/*"]
     }
   }
 }

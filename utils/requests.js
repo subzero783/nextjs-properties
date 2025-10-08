@@ -12,6 +12,8 @@ async function fetchProperties({ showFeatured = false } = {}) {
     // const res = await fetch(`${apiDomain}/properties${showFeatured ? "/featured" : ""}`, { cache: "force-cache" });
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties${showFeatured ? "/featured" : ""}`, { cache: "force-cache" });
 
+    console.log(res);
+
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }

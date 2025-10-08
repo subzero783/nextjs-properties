@@ -1,8 +1,5 @@
-// const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
-// Not working
-const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
-
-export const dynamic = "force-dynamic";
+const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
+// const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
 
 // Fetch all properties
 async function fetchProperties({ showFeatured = false } = {}) {
@@ -12,7 +9,7 @@ async function fetchProperties({ showFeatured = false } = {}) {
       return [];
     }
 
-    const res = await fetch(`${apiDomain}/properties${showFeatured ? "/featured" : ""}`, { cache: "no-store" });
+    const res = await fetch(`${apiDomain}/properties${showFeatured ? "/featured" : ""}`, { cache: "force-cache" });
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -32,7 +29,7 @@ async function fetchProperty(id) {
       return null;
     }
 
-    const res = await fetch(`${apiDomain}/properties/${id}`, { cache: "no-store" });
+    const res = await fetch(`${apiDomain}/properties/${id}`, { cache: "force-cache" });
 
     if (!res.ok) {
       throw new Error("Failed to fetch properties data");

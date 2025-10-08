@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../assets/images/logo-white.png";
-import profileDefault from "../assets/images/profile.png";
+import logo from "@/assets/images/logo-white.png";
+import profileDefault from "@/assets/images/profile.png";
 import { FaGoogle } from "react-icons/fa";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import UnreadMessageCount from "./UnreadMessageCount";
+import UnreadMessageCount from "@/components/UnreadMessageCount";
 
 const NavBar = () => {
   const { data: session } = useSession();
@@ -19,6 +19,11 @@ const NavBar = () => {
   const [providers, setProviders] = useState(false);
 
   let pathName = usePathname();
+
+  const handleSignin = (e) => {
+    e.preventDefault();
+    signIn(provider.id);
+  };
 
   useEffect(() => {
     const setAuthProviders = async () => {
@@ -111,7 +116,7 @@ const NavBar = () => {
                   Object.values(providers).map((provider, index) => (
                     <button
                       key={index}
-                      onClick={() => signIn(provider.id)}
+                      onClick={handleSignin}
                       className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
                     >
                       <FaGoogle className="text-white mr-2" />
@@ -257,7 +262,7 @@ const NavBar = () => {
               providers &&
               Object.values(providers).map((provider, index) => (
                 <button
-                  onClick={() => signIn(provider.id)}
+                  onClick={handleSignin}
                   key={index}
                   className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
                 >

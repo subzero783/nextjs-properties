@@ -2,15 +2,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { fetchProperty } from "../../../utils/requests";
-import PropertyHeaderImage from "../../../components/PropertyHeaderImage";
-import PropertyImages from "../../../components/PropertyImages";
-import PropertyDetails from "../../../components/PropertyDetails";
+import { fetchProperty } from "@/utils/requests";
+import PropertyHeaderImage from "@/components/PropertyHeaderImage";
+import PropertyImages from "@/components/PropertyImages";
+import PropertyDetails from "@/components/PropertyDetails";
 import { FaArrowLeft } from "react-icons/fa";
-import Spinner from "../../../components/Spinner";
-import BookmarkButton from "../../../components/BookmarkButton";
-import ShareButtons from "../../../components/ShareButtons";
-import PropertyContactForm from "../../../components/PropertyContactForm";
+import Spinner from "@/components/Spinner";
+import BookmarkButton from "@/components/BookmarkButton";
+import ShareButtons from "@/components/ShareButtons";
+import PropertyContactForm from "@/components/PropertyContactForm";
 
 const PropertyPage = () => {
   const { id } = useParams();

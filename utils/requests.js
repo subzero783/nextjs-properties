@@ -1,3 +1,6 @@
+const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
+// const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
+
 // Fetch all properties
 async function fetchProperties({ showFeatured = false } = {}) {
   try {

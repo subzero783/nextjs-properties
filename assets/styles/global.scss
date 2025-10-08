@@ -1,6 +1,6 @@
 @use "tailwindcss";
 
-@import "/assets/styles/components/SinglePropertyPage";
+@import "../assets/styles/components/SinglePropertyPage.scss";
 
 button {
     cursor: pointer;

@@ -47,7 +47,16 @@ async function fetchProperty(id) {
     }
 
     // const res = await fetch(`${apiDomain}/properties/${id}`, { cache: "force-cache" });
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties/${id}`, { cache: "force-cache" });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_DOMAIN}/properties/${id}`,
+      { cache: "force-cache" },
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     if (!res.ok) {
       throw new Error("Failed to fetch properties data");

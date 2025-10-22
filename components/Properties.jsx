@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import PropertyCard from "../components/PropertyCard";
-import Spinner from "../components/Spinner";
-import Pagination from "../components/Pagination";
+import Spinner from "@/components/Spinner";
+import Pagination from "@/components/Pagination";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);

@@ -1,5 +1,5 @@
-import { fetchProperties } from "../utils/requests";
-import FeaturedPropertyCard from "../components/FeaturedPropertyCard";
+import { fetchProperties } from "@/utils/requests";
+import FeaturedPropertyCard from "@/components/FeaturedPropertyCard";
 
 const FeaturedProperties = async () => {
   const properties = await fetchProperties({

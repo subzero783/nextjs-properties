@@ -5,6 +5,10 @@ import connectDB from "@/config/database";
 import bcrypt from "bcryptjs";
 
 export const authOptions = {
+  pages: {
+    signIn: "/login",
+    signOut: "/login",
+  },
   providers: [
     CredentialsProvider({
       id: "credentials",

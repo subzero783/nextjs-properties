@@ -106,7 +106,7 @@ const Navbar = () => {
           {!session && (
             <div className="hidden md:block md:ml-6">
               <div className="flex items-center">
-                {providers &&
+                {/* {providers &&
                   Object.values(providers).map((provider, index) => (
                     <button
                       onClick={() => signIn(provider.id)}
@@ -116,7 +116,7 @@ const Navbar = () => {
                       <FaGoogle className="text-white mr-2" />
                       <span>Login or Register</span>
                     </button>
-                  ))}
+                  ))} */}
               </div>
             </div>
           )}
@@ -211,7 +211,9 @@ const Navbar = () => {
                     <button
                       onClick={() => {
                         setIsProfileMenuOpen(false);
-                        signOut();
+                        signOut({
+                          callbackUrl: "/login",
+                        });
                       }}
                       className="block px-4 py-2 text-sm text-gray-700"
                       role="menuitem"
@@ -253,7 +255,7 @@ const Navbar = () => {
               </Link>
             )}
 
-            {!session &&
+            {/* {!session &&
               providers &&
               Object.values(providers).map((provider, index) => (
                 <button
@@ -263,7 +265,7 @@ const Navbar = () => {
                 >
                   <span>Login or Register</span>
                 </button>
-              ))}
+              ))} */}
           </div>
         </div>
       )}

@@ -84,10 +84,10 @@ const Login = () => {
           <button
             className="w-full bg-black text-white py-2 rounded hover:bg-gray-800"
             onClick={() => {
-              signIn("github");
+              signIn("google");
             }}
           >
-            Sign In with Github
+            Sign In with Google
           </button>
           <div className="text-center text-gray-500 mt-4">- OR -</div>
           <Link

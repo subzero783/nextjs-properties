@@ -2,11 +2,11 @@ import connectDB from "@/config/database";
 import Property from "@/models/Property";
 
 // GET /api/properties/:userId
-export const GET = async (request, { params }) => {
+export const GET = async ({ params }) => {
   try {
     await connectDB();
 
-    const userId = params.userId;
+    const userId = await params.userId;
 
     if (!userId) {
       return new Response("User ID is required", {

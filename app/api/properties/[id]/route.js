@@ -3,7 +3,7 @@ import Property from "@/models/Property";
 import { getSessionUser } from "@/utils/getSessionUser";
 
 // GET /api/properties/:id
-export const GET = async (request, { params }) => {
+export const GET = async ({ params }) => {
   try {
     await connectDB();
 
@@ -22,7 +22,7 @@ export const GET = async (request, { params }) => {
 };
 
 // DELETE /api/properties/:id
-export const DELETE = async (request, { params }) => {
+export const DELETE = async ({ params }) => {
   try {
     const propertyId = params.id;
 

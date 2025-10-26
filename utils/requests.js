@@ -39,7 +39,7 @@ async function fetchProperty(id) {
 
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_DOMAIN}/properties/${id}`,
-      { cache: "force-cache" },
+      { cache: "no-store" },
       {
         method: "GET",
         headers: {

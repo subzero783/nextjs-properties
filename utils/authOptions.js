@@ -43,11 +43,6 @@ export const authOptions = {
   ],
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
-      console.log("profile");
-      console.log(profile);
-      console.log("account");
-      console.log(account);
-
       await connectDB();
 
       if (account.provider === "google") {

@@ -2,7 +2,7 @@ import connectDB from "@/config/database";
 import Property from "@/models/Property";
 
 // GET /api/properties/:userId
-export const GET = async ({ params }) => {
+export const GET = async (request, { params }) => {
   try {
     await connectDB();
 

@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { FaGoogle } from "react-icons/fa";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -58,17 +59,17 @@ const Login = () => {
     sessionStatus !== "authenticated" && (
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="bg-[#212121] p-8 rounded shadow-md w-96">
-          <h1 className="text-4xl text-center font-semibold mb-8">Login</h1>
+          <h1 className="text-4xl text-center text-white font-semibold mb-8">Login</h1>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
+              className="w-full border border-gray-300 text-white rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-white"
               placeholder="Email"
               required
             />
             <input
               type="password"
-              className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
+              className="w-full border border-gray-300 text-white rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-white"
               placeholder="Password"
               required
             />
@@ -82,12 +83,13 @@ const Login = () => {
             <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
           </form>
           <button
-            className="w-full bg-black text-white py-2 rounded hover:bg-gray-800"
+            className="w-full flex items-center justify-center mt-4 text-white py-2 rounded bg-gray-700 hover:bg-gray-800"
             onClick={() => {
               signIn("google");
             }}
           >
-            Sign In with Google
+            <FaGoogle className="text-white mr-2" />
+            <span>Sign In with Google</span>
           </button>
           <div className="text-center text-gray-500 mt-4">- OR -</div>
           <Link

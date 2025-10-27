@@ -1,7 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import GoogleProvider from "next-auth/providers/google";
 import { useRouter } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
 import { FaGoogle } from "react-icons/fa";
@@ -69,17 +67,17 @@ const Register = () => {
     sessionStatus !== "authenticated" && (
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="bg-[#212121] p-8 rounded shadow-md w-96">
-          <h1 className="text-4xl text-center font-semibold mb-8">Register</h1>
+          <h1 className="text-4xl text-center text-white font-semibold mb-8">Register</h1>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
+              className="w-full border border-gray-300 text-white rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-white"
               placeholder="Email"
               required
             />
             <input
               type="password"
-              className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
+              className="w-full border border-gray-300 text-white rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-white"
               placeholder="Password"
               required
             />
@@ -95,7 +93,7 @@ const Register = () => {
           <div className="text-center text-gray-500 mt-4">- OR -</div>
           <button
             onClick={() => signIn("google")}
-            className="w-full flex items-center justify-center mt-4 text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+            className="w-full flex items-center justify-center mt-4 text-white hover:text-white bg-gray-700 hover:bg-gray-800 rounded-md px-3 py-2"
           >
             <FaGoogle className="text-white mr-2" />
             <span>Register with Google</span>

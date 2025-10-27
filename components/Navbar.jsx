@@ -1,12 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/images/logo-white.png";
 import profileDefault from "@/assets/images/profile.png";
-import { FaGoogle } from "react-icons/fa";
-import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import UnreadMessageCount from "./UnreadMessageCount";
 
 const Navbar = () => {
@@ -15,18 +14,8 @@ const Navbar = () => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-  const [providers, setProviders] = useState(null);
 
   const pathname = usePathname();
-
-  useEffect(() => {
-    const setAuthProviders = async () => {
-      const res = await getProviders();
-      setProviders(res);
-    };
-
-    setAuthProviders();
-  }, []);
 
   return (
     <nav className="bg-blue-700 border-b border-blue-500">
@@ -106,17 +95,22 @@ const Navbar = () => {
           {!session && (
             <div className="hidden md:block md:ml-6">
               <div className="flex items-center">
-                {/* {providers &&
-                  Object.values(providers).map((provider, index) => (
-                    <button
-                      onClick={() => signIn(provider.id)}
-                      key={index}
-                      className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                {!session && (
+                  <>
+                    <Link
+                      href="/login"
+                      className="text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 mr-2"
                     >
-                      <FaGoogle className="text-white mr-2" />
-                      <span>Login or Register</span>
-                    </button>
-                  ))} */}
+                      Login
+                    </Link>
+                    <Link
+                      href="/register"
+                      className="text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                    >
+                      Register
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           )}
@@ -255,17 +249,22 @@ const Navbar = () => {
               </Link>
             )}
 
-            {/* {!session &&
-              providers &&
-              Object.values(providers).map((provider, index) => (
-                <button
-                  onClick={() => signIn(provider.id)}
-                  key={index}
-                  className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+            {!session && (
+              <>
+                <Link
+                  href="/login"
+                  className={`${pathname === "/login" ? "bg-black" : ""} text-white block rounded-md px-3 py-2 text-base font-medium`}
                 >
-                  <span>Login or Register</span>
-                </button>
-              ))} */}
+                  Login
+                </Link>
+                <Link
+                  href="/register"
+                  className={`${pathname === "/register" ? "bg-black" : ""} text-white block rounded-md px-3 py-2 text-base font-medium`}
+                >
+                  Register
+                </Link>
+              </>
+            )}
           </div>
         </div>
       )}

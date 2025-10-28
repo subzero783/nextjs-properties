@@ -38,8 +38,8 @@ const PropertyImages = ({ images }) => {
                   <Item
                     original={image}
                     thumbnail={image}
-                    width="1000"
-                    height="600"
+                    width="1600" // 16:9 ratio
+                    height="900" // 16:9 ratio
                   >
                     {({ ref, open }) => (
                       <Image
@@ -47,7 +47,7 @@ const PropertyImages = ({ images }) => {
                         onClick={open}
                         src={image}
                         alt=""
-                        className="object-cover h-[400px] w-full rounded-xl"
+                        className="object-cover aspect-video w-full rounded-xl"
                         width={0}
                         height={0}
                         sizes="100vw"

@@ -10,8 +10,8 @@ const PropertyImages = ({ images }) => {
             <Item
               original={images[0]}
               thumbnail={images[0]}
-              width="1000"
-              height="600"
+              width="1600" // 16:9 ratio
+              height="900" // 16:9 ratio
             >
               {({ ref, open }) => (
                 <Image
@@ -20,8 +20,9 @@ const PropertyImages = ({ images }) => {
                   src={images[0]}
                   alt=""
                   className="object-cover h-[400px] mx-auto rounded-xl"
-                  width={1800}
-                  height={400}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                   priority={true}
                 />
               )}

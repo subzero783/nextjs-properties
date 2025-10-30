@@ -10,8 +10,8 @@ const PropertyImages = ({ images }) => {
             <Item
               original={images[0]}
               thumbnail={images[0]}
-              width="1600" // 16:9 ratio
-              height="900" // 16:9 ratio
+              width="1000"
+              height="600"
             >
               {({ ref, open }) => (
                 <Image
@@ -20,9 +20,8 @@ const PropertyImages = ({ images }) => {
                   src={images[0]}
                   alt=""
                   className="object-cover h-[400px] mx-auto rounded-xl"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
+                  width={1800}
+                  height={400}
                   priority={true}
                 />
               )}
@@ -39,8 +38,8 @@ const PropertyImages = ({ images }) => {
                   <Item
                     original={image}
                     thumbnail={image}
-                    width="1600" // 16:9 ratio
-                    height="900" // 16:9 ratio
+                    width="1000"
+                    height="600"
                   >
                     {({ ref, open }) => (
                       <Image
@@ -48,7 +47,7 @@ const PropertyImages = ({ images }) => {
                         onClick={open}
                         src={image}
                         alt=""
-                        className="object-cover aspect-video w-full rounded-xl"
+                        className="object-cover h-[400px] w-full rounded-xl"
                         width={0}
                         height={0}
                         sizes="100vw"

@@ -1,5 +1,7 @@
 @use "tailwindcss";
 @use "./components/SinglePropertyPage.scss";
+@use "./components/PropertyImages.scss";
+@use "./components/PropertyHeaderImage.scss";
 
 button {
     cursor: pointer;

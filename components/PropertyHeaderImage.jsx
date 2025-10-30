@@ -4,7 +4,7 @@ const PropertyHeaderImage = ({ image }) => {
   const imageSrc = image.includes("cloudinary") ? image : `/images/properties/${image}`;
 
   return (
-    <section>
+    <section className="property-header-image">
       <div className="container-xl m-auto">
         <div className="grid grid-cols-1">
           <Image

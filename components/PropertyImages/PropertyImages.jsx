@@ -1,3 +1,4 @@
+import "./PropertyImages.scss";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";

@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { fetchProperty } from "@/utils/requests";
 import PropertyHeaderImage from "@/components/PropertyHeaderImage";
-import PropertyImages from "@/components/PropertyImages";
+import PropertyImages from "@/components/PropertyImages/PropertyImages";
 import PropertyDetails from "@/components/PropertyDetails";
 import { FaArrowLeft } from "react-icons/fa";
 import Spinner from "@/components/Spinner";

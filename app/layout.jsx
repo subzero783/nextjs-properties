@@ -1,4 +1,4 @@
-import "../assets/styles/Component.global.scss";
+import "../assets/styles/global.scss";
 import Footer from "@/components/Footer.jsx";
 import NavBar from "@/components/Navbar.jsx";
 import AuthProvider from "@/components/AuthProvider.jsx";

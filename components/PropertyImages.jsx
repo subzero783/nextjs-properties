@@ -5,6 +5,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 
 const PropertyImages = ({ images }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleNextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
@@ -16,16 +17,26 @@ const PropertyImages = ({ images }) => {
 
   const handleCloseModal = () => {
     // When #property-close-container is clicked, close the property-image-modal
-    const propertyImageModal = document.getElementById("property-image-modal");
-    propertyImageModal.style.display = "none";
+    setModalOpen(false);
+    setCurrentSlide(0);
   };
 
   const handleModalOpening = (e) => {
-    // When a property-image is clicked, open the property-image-modal
+    const parentElement = e.target.parentElement;
+    const parentElementKey = parseInt(parentElement.getAttribute("data-image-number"));
+    setCurrentSlide(parentElementKey);
+    const propertyImageSlides = document.querySelectorAll(".property-image-slide");
+    propertyImageSlides.forEach((slide, index) => {
+      if (index === parentElementKey) {
+        slide.classList.add("active");
+      } else {
+        slide.classList.remove("active");
+      }
+    });
+    setModalOpen(true);
   };
 
   useEffect(() => {
-    console.log(`The slide has changed to: ${currentSlide}`);
     // When currentSlide state changes, change the property-image-slide active class
     const propertyImageSlides = document.querySelectorAll(".property-image-slide");
     propertyImageSlides.forEach((slide, index) => {
@@ -46,6 +57,7 @@ const PropertyImages = ({ images }) => {
               <div
                 key={index}
                 className={`${images.length === 3 && index === 2 ? "col-span-2" : "col-span-1"}`}
+                data-image-number={index}
               >
                 <Image
                   src={image}
@@ -55,8 +67,8 @@ const PropertyImages = ({ images }) => {
                   height={0}
                   sizes="100vw"
                   priority={true}
-                  onClick={() => {
-                    handleModalOpening();
+                  onClick={(e) => {
+                    handleModalOpening(e);
                   }}
                 />
               </div>
@@ -64,7 +76,10 @@ const PropertyImages = ({ images }) => {
           </div>
         </div>
       </section>
-      <div id="property-image-modal">
+      <div
+        id="property-image-modal"
+        className={`${modalOpen ? "open" : ""}`}
+      >
         <div className="property-image-slider">
           {images.map((image, index) => (
             <div

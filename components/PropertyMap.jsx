@@ -57,7 +57,7 @@ const PropertyMap = ({ property }) => {
       }
     };
     fetchCords();
-  }, []);
+  }, [property.location.street, property.location.city, property.location.state, property.location.zipcode, viewport]);
 
   if (loading) {
     return <Spinner loading={loading} />;

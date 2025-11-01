@@ -30,9 +30,9 @@ const PropertyAddForm = () => {
     images: [],
   });
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

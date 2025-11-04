@@ -4,6 +4,7 @@ button {
     cursor: pointer;
 }
 
+// /app/properties/[id]/page.jsx
 .back-to-properties-section {
     > div {
         > a {
@@ -11,6 +12,7 @@ button {
         }
     }
 }
+
 .container-main-aside {
     display: flex;
     flex-flow: row nowrap;
